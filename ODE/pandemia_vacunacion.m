@@ -66,9 +66,9 @@ hold off
 VaccineDurations =    [1 5 10 15 20 30];
 VaccineStarts =       [1 30 60 80 100];
 VaccineFractions =    [0.2 0.4 0.6 0.8 1.0];
-%VaccineFractions =    [0.4];
-%% Conduct simulations
 
+%% Conduct simulations
+% Cambiar el orden de los fors dependiendo de lo que se quiera variar en la misma figura
 for j=1:length(VaccineDurations)
     figure(j)
     for i=1:length(VaccineFractions)
@@ -84,8 +84,8 @@ for j=1:length(VaccineDurations)
         legend(Legend);
         title( titleplot )
         hold off
-        %outFile=[runDir,'SIR_ODE_Vac_frac',num2str(round(VaccineFractions(i)*100)),'.png'];                                                                                                                                                                                                                                                                
-        %export_fig(outFile) 
+        outFile=[runDir,'SIR_ODE_Vac_frac',num2str(round(VaccineFractions(i)*100)),'.png'];                                                                                                                                                                                                                                                                
+        export_fig(outFile) 
     end
 end
 
